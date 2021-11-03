@@ -1,3 +1,4 @@
+<?php
 add_action( 'admin_enqueue_scripts', 'add_enqueue_select2_cpt_jquery_func' );
 function add_enqueue_select2_cpt_jquery_func() {
 	global $post;
@@ -175,37 +176,6 @@ function btn_multi_add_to_cart_shortcode_func($atts) {
    return $contenido;
 }
 add_shortcode('btn_multi_add_to_cart', 'btn_multi_add_to_cart_shortcode_func');
-
-/*function add_the_date_validation( $passed ) { 
-if ( !empty( $_REQUEST['multi'] )) {
-    wc_add_notice( __( 'Please enter a date.', 'woocommerce' ), 'error' );
-    $passed = true;
-}
-return $passed;
-}
-add_filter( 'woocommerce_add_to_cart_validation', 'add_the_date_validation', 10, 5 );
-
-function save_add_the_date_field( $cart_item_key, $product_id = null, $quantity= null, $variation_id= null, $variation= null ) {
-if( isset( $_REQUEST['multi'] ) ) {
-    wc_add_notice( __( 'Please enter a date.', 'woocommerce' ), 'error' );
-}
-}
-
-add_action( 'woocommerce_add_to_cart', 'save_add_the_date_field', 1, 5 );
-
-function my_custom_add_to_cart_redirect( $url ) {
-    $url = WC()->cart->get_checkout_url();
-    return $url;
-}
-add_filter( 'woocommerce_add_to_cart_redirect', 'my_custom_add_to_cart_redirect' );
-
-add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
-
-function redirect_to_checkout() {
-    global $woocommerce;
-    $checkout_url = $woocommerce->cart->get_checkout_url();
-    return $checkout_url;
-}*/
 
 add_action('wp_footer', 'add_script_footer_has_shortcode_btn_multi_add_to_cart_func',100);
 function add_script_footer_has_shortcode_btn_multi_add_to_cart_func() {
